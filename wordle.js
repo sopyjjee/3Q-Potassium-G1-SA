@@ -18,10 +18,19 @@ function checkWord() {
 
     let rowIndex = 5 - health;  
 
-    let answer = prompt("Enter a word: ").toUpperCase();
-	if (answer === null){
-		return;
-	}
+    let answer = prompt("Enter a word:");  
+    if (answer === null) {
+        alert("You pressed Cancel. Please enter a word to continue.");
+        return;  
+    }
+
+    answer = answer.trim();  
+    if (answer === "") {
+        alert("Invalid input. Please enter a 5-letter word.");
+        return;
+    }
+
+    answer = answer.toUpperCase();
 
     if (answer.length < 5 || answer.length > 5 ) {
         alert("Invalid input. Please enter a 5-letter word.");
